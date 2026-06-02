@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Personal architecture notes
+ARCHITECTURE_NOTES.md
+ALTERNATIVE_SOLUTION.md
+
+mds_zadatak_2026_python_rs.pdf
