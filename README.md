@@ -10,13 +10,13 @@ Event-driven order and inventory management system built with two independent Py
 Client
   │  POST /orders {"orderId", "itemId", "quantity"}
   ▼
-┌─────────────┐                         ┌───────────────────┐
+┌─────────────┐                          ┌───────────────────┐
 │  Order API  │ ──── OrderPlaced ──────► │                   │
 │  (FastAPI)  │      orders topic        │       Kafka       │
-└─────────────┘                         │                   │
-      │                                 └────────┬──────────┘
-      │ 202 Accepted                             │ consume
-      ▼                                          ▼
+└─────────────┘                          │                   │
+      │                                  └────────┬──────────┘
+      │ 202 Accepted                              │ consume
+      ▼                                           ▼
    Client                             ┌──────────────────────┐
                                       │  Inventory Service   │
                                       │  (consumer loop)     │
