@@ -12,7 +12,7 @@ class OrderRequest(BaseModel):
 
     order_id: str = Field(alias="orderId")
     item_id: str = Field(alias="itemId")
-    quantity: int
+    quantity: int = Field(gt=0)
 
 def _get_handler(request: Request) -> PlaceOrderHandler:
     return request.app.state.place_order_handler
