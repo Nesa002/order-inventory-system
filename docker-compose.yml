@@ -1,7 +1,7 @@
 services:
 
   kafka:
-    image: apache/kafka:latest
+    image: apache/kafka:3.7.0
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: broker,controller
@@ -23,7 +23,7 @@ services:
       start_period: 30s
 
   kafka-init:
-    image: apache/kafka:latest
+    image: apache/kafka:3.7.0
     depends_on:
       kafka:
         condition: service_healthy
